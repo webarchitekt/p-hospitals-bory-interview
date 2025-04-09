@@ -1,0 +1,81 @@
+@use "src/theme/mixin" as mixin;
+
+.calendar {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.calendar-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    background: var(--mat-sys-on-secondary);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+.calendar-card,
+.slots-section {
+    flex: 1 1 260px;
+    min-width: 260px;
+    width: 100%;
+}
+
+.slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.slots button {
+    flex: 0 0 auto;
+    min-width: 100px;
+}
+
+.slots button {
+    color: var(--mat-sys-secondary)!important;
+    border: 1px solid var(--mat-sys-secondary)!important;
+    background-color: white!important;
+    transition: all 0.2s ease;
+}
+
+.slots button:hover,
+.slots button:focus {
+    @include mixin.green-button-active;
+}
+
+.slots button.selected {
+    @include mixin.green-button-active;
+}
+
+.mat-mdc-card {
+    background-color: var(--mat-sys-on-secondary)!important;
+    box-shadow: none!important;
+}
+
+::ng-deep .highlight-date .mat-calendar-body-cell-content::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2px;
+    width: 5px;
+    height: 5px;
+    background-color: var(--mat-sys-primary);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+::ng-deep .mat-calendar-body-label {
+    color: transparent!important;
+    pointer-events: none!important;
+    font-size: 0!important;
+    padding: 0!important;
+}

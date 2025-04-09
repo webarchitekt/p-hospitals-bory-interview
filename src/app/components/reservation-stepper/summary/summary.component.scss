@@ -1,0 +1,91 @@
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.summary-col {
+    flex: 1 1 300px;
+    max-width: 350px;
+    min-width: 280px;
+    height: auto;
+    background: var(--mat-sys-on-secondary);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.summary-container {
+    display: flex;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    color: #B2B4B7;
+}
+
+.summary-value {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--mat-sys-secondary);
+}
+
+.summary-item {
+    width: 200px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    background-color: #DAF1E1;
+    color: var(--mat-sys-primary);
+    font-size: 0.75rem;
+    max-width: fit-content;
+    gap: 2px;
+}
+
+.chip mat-icon {
+    height: 1.125rem;
+    width: 1.125rem;
+    font-size: 1rem;
+    color: inherit;
+}
+
+.summary-highlight-text {
+    color: var(--mat-sys-primary);
+    font-size: 1rem;
+}
+
+.summary-checkboxes {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+   .summary {
+       padding: 0!important;
+   }
+
+   .summary-col {
+       padding: 0.5rem!important;
+       width: 100%!important;
+   }
+}

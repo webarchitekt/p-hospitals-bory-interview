@@ -1,0 +1,5 @@
+@mixin green-button-active {
+  color: white !important;
+  border-color: var(--mat-sys-primary) !important;
+  background-color: var(--mat-sys-primary) !important;
+}

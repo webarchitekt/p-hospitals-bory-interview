@@ -1,0 +1,45 @@
+<mat-toolbar class="navigation">
+    <app-logo></app-logo>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="openCloseModal()">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-stepper labelPosition="bottom" #stepper linear>
+    <mat-step [editable]="false" [stepControl]="selectDateFormGroup" state="adjust">
+        <ng-template matStepLabel>Výber termínu</ng-template>
+        <form [formGroup]="selectDateFormGroup">
+            <appointment-selection (dateSelected)="handleDateChange($event)"
+                                   [formGroup]="selectDateFormGroup">
+            </appointment-selection>
+            <div class="button-wrapper">
+                <button [disabled]="!selectedDate" mat-flat-button matStepperNext>Pokračovať</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [editable]="false" [stepControl]="personalDataFormGroup" state="adjust">
+        <ng-template matStepLabel>Vaše údaje</ng-template>
+        <form [formGroup]="personalDataFormGroup">
+            <personal-information [personalDataFormGroup]="personalDataFormGroup"></personal-information>
+            <div class="button-wrapper">
+                <button (click)="savePersonalData()" [disabled]="personalDataFormGroup.invalid" mat-flat-button>Pokračovať
+                </button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [editable]="false" [stepControl]="summaryFormGroup" state="adjust">
+        <ng-template matStepLabel>Zhrnutie</ng-template>
+        <form [formGroup]="summaryFormGroup">
+            <summary [finalReservationDate]="finalReservationDate"
+                     [summaryFormGroup]="summaryFormGroup"
+                     [summaryPersonalData]="finalPersonalData">
+            </summary>
+            <div class="button-wrapper">
+                <button (click)="confirmReservation()" mat-flat-button [disabled]="summaryFormGroup.invalid">Rezervovať a uhradiť</button>
+            </div>
+        </form>
+    </mat-step>
+</mat-stepper>
+

@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import {EndpointsService} from "./services/endpoints.service";
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  providers: [EndpointsService]
 })
-export class AppComponent {
-  title = 'test-org';
+export class AppComponent implements OnInit{
+  title = 'Interview task';
+
+  constructor(
+  ) {
+  }
+
+    ngOnInit(): void {
+    }
 }

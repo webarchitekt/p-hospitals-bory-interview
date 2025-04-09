@@ -1,0 +1,34 @@
+<section class="calendar">
+    <h1 class="title mt-xl">Doprajte si druhý názor od {{randomDoctors.name}} {{randomDoctors.surname}}<br>v Nemocnici Bory</h1>
+    <p class="description-secondary text-center">Vyberte si termín na 60-minútovú konzultáciu za poplatok a náš odborník
+        zhodnotí váš zdravotný stav a odporučí spôsob liečby.</p>
+    <div class="calendar-row mt-xl">
+        <mat-card class="calendar-card">
+            <mat-calendar #calendar
+                          (selectedChange)="onDateChange()"
+                          [(selected)]="selected"
+                          [dateClass]="dateClass"
+                          [dateFilter]="calendarUtil.filterDates">
+            </mat-calendar>
+        </mat-card>
+
+        <div class="slots-section">
+            <h3 class="text-center">Dostupné časy</h3>
+
+            <ng-container *ngIf="selectedSlots.length > 0; else noSlots">
+                <div class="slots">
+                    <button (click)="selectSlot(slot, calendarUtil.formatDateKey(selected()))"
+                            *ngFor="let slot of selectedSlots"
+                            [class.selected]="formGroup.controls['slot'].value === slot.time"
+                            mat-button>
+                        {{ slot.time }}
+                    </button>
+                </div>
+            </ng-container>
+
+            <ng-template #noSlots>
+                <p class="text-center">Pre tento deň nie sú dostupné žiadne časy.</p>
+            </ng-template>
+        </div>
+    </div>
+</section>

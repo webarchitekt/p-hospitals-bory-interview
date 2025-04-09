@@ -1,0 +1,35 @@
+.button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+}
+
+::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container {
+    width: 400px!important;
+    margin: 0 auto!important;
+}
+
+::ng-deep .mat-step-icon-state-done {
+    background: var(--mat-sys-primary)!important;
+    color: var(--mat-sys-on-primary)!important;
+}
+
+::ng-deep .mat-step-icon-state-adjust .mat-step-icon-content .mat-icon {
+    font-size: 30px!important;
+    height: 30px!important;
+    width: 30px!important;
+}
+
+::ng-deep .mat-horizontal-stepper-wrapper .mat-horizontal-stepper-header-container {
+    margin-top: -100px!important;
+}
+
+@media (max-width: 768px) {
+    ::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container {
+        width: 350px!important;
+    }
+
+    ::ng-deep .mat-horizontal-stepper-wrapper .mat-horizontal-stepper-header-container {
+        margin-top: 0!important;
+    }
+}

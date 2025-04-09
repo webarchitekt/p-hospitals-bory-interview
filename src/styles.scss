@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/theme/penta-hospitals-theme.css';
+
+html, body {
+  background: var(--mat-sys-surface);
+  font-family: var(--mat-sys-body-large-font);
+  margin: 0!important;
+}
+
+.title {
+  text-align: center;
+  font-weight: 400;
+  color: var(--mat-sys-secondary);
+  font-size: 1.5rem;
+}
+
+.title-huge {
+  text-align: center;
+  font-weight: 400;
+  color: var(--mat-sys-secondary);
+  font-size: 40px
+}
+
+.text-center {
+  text-align: center;
+}
+
+.description {
+  color: var(--mat-sys-primary);
+  font-size: 1.5rem;
+}
+
+.description-secondary {
+  color: var(--mat-sys-secondary);
+  font-size: 1rem;
+}
+
+.description-error {
+  color: var(--mat-sys-error);
+  font-size: 1.5rem;
+}
+
+.error-snack .mat-mdc-snackbar-surface {
+  background: var(--mat-sys-error)!important;
+  color: var(--mat-sys-on-primary)!important;
+}
+
+.success-snack .mat-mdc-snackbar-surface {
+  background: var(--mat-sys-primary)!important;
+  color: var(--mat-sys-on-primary)!important;
+}
+
+.mt-m {
+  margin-top: 1rem
+}
+
+.mt-l {
+  margin-top: 2rem;
+}
+
+.mt-xl {
+  margin-top: 3rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.navigation {
+  height: 100px!important;
+  background: var(--mat-sys-on-primary)!important;
+  margin: 0!important;
+}

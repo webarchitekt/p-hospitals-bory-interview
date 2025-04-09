@@ -1,0 +1,63 @@
+<section class="summary">
+    <div class="row">
+        <div class="summary-col">
+            <div class="chip">
+                <mat-icon>person</mat-icon><span>Osobné údaje</span>
+            </div>
+            <div class="summary-container">
+                <div class="summary-item mt-m">
+                    <span class="summary-label">Meno</span>
+                    <p class="summary-value">{{summaryPersonalData?.name}}</p>
+                </div>
+
+                <div class="summary-item mt-m">
+                    <span class="summary-label">Priezvisko</span>
+                    <p class="summary-value">{{summaryPersonalData?.surname}}</p>
+                </div>
+            </div>
+
+            <div class="summary-container">
+                <div class="summary-item mt-m">
+                    <span class="summary-label">Rodné číslo</span>
+                    <p class="summary-value">{{summaryPersonalData?.birthNumber}}</p>
+                </div>
+            </div>
+
+            <div class="summary-container">
+                <div class="summary-item mt-m">
+                    <span class="summary-label">Adresa</span>
+                    <p class="summary-value">{{selectedCityName}}</p>
+                    <p class="summary-value">{{selectedCountryName}}</p>
+                </div>
+            </div>
+
+            <div class="chip mt-m">
+                <mat-icon>arrow_forward</mat-icon><span>Kontaktné údaje</span>
+            </div>
+            <div class="summary-container">
+                <div class="summary-item mt-m">
+                    <span class="summary-label">E-mailová adresa</span>
+                    <p class="summary-value">{{summaryPersonalData?.email}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-col">
+            <div class="chip">
+                <mat-icon>calendar_today</mat-icon><span>Vybraný termín</span>
+            </div>
+            <p class="summary-highlight-text">{{finalReservationDate}}</p>
+        </div>
+    </div>
+
+    <div class="summary-checkboxes" [formGroup]="summaryFormGroup">
+        <p><mat-checkbox formControlName="gdpr">Oboznámil/a som sa s informáciami o spracúvaní osobných údajov</mat-checkbox></p>
+        <p><mat-checkbox formControlName="businessConditions">Súhlasím so všeobecnými obchodnými podmienkami spoločnosti Nemocnica Bory, a.s</mat-checkbox></p>
+        <p><mat-checkbox formControlName="marketingPurposes">Súhlasím so spracovaním údajov pre marketingové účely.</mat-checkbox></p>
+    </div>
+</section>
+
+
+
+
+

@@ -1,0 +1,12 @@
+<section class="thank-you">
+    <div class="thank-you-container" *ngIf="personalData?.name">
+        <h1 class="title-huge">Ďakujeme za úhradu, {{personalData?.name}}</h1>
+        <p class="description">Váš termín na konzultáciu máte úspešne rezervovaný.</p>
+        <a href="https://pentahospitals.sk/" target="_blank" mat-flat-button>Späť na stránku Nemocnice Bory</a>
+    </div>
+
+    <div class="thank-you-container" *ngIf="errorMessage">
+        <p class="description-error">Vaša rezervácia termínu na konzultáciu nebola dokončená.</p>
+        <a mat-flat-button (click)="newReservation()">Začať novú rezerváciu</a>
+    </div>
+</section>
