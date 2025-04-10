@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, model, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatStepper, MatStepperModule} from "@angular/material/stepper";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -82,8 +82,7 @@ export class ReservationStepperComponent {
         marketingPurposes: new FormControl('')
     });
 
-    constructor(public form: FormBuilder,
-                public endpointService: EndpointsService,
+    constructor(public endpointService: EndpointsService,
                 public notificationsService: NotificationsService,
                 public router: Router,
                 public reservationStoreService: ReservationStoreService,
