@@ -58,10 +58,10 @@ export class ReservationStepperComponent {
     @ViewChild('stepper') stepper!: MatStepper;
 
     public selected = model<Date | null>(null);
-    public selectedDate: string = "";
-    public finalReservationDate: string = "";
-    public slotId: string = "";
-    public finalPersonalData?: PersonalData;
+    public selectedDate = "";
+    public finalReservationDate = "";
+    public slotId = "";
+    public finalPersonalData!: PersonalData;
     public personalDataResponse?: PersonalDataResponse;
 
     public selectDateFormGroup = new FormGroup({

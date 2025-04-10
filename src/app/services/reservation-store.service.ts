@@ -6,14 +6,14 @@ import {PersonalData} from "../models/personal-data.interface";
     providedIn: 'root'
 })
 export class ReservationStoreService {
-    private personalDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>('');
-    private errMessageSubject = new BehaviorSubject<string | undefined>('');
+    private personalDataSubject: BehaviorSubject<PersonalData> = new BehaviorSubject<PersonalData>({} as PersonalData);
+    private errMessageSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
 
     personalData$ = this.personalDataSubject.asObservable();
     errMessage$ = this.errMessageSubject.asObservable();
 
-    setPersonalData(data: PersonalData | undefined) {
+    setPersonalData(data: PersonalData) {
         this.personalDataSubject.next(data);
     }
 
